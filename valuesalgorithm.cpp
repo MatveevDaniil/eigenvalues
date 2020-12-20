@@ -87,19 +87,19 @@ void values_search(int n, double* matrix, double* values, double* x1, double* x2
 	for (int loc_n = n; loc_n > 2; loc_n--) {
 		check_param = fabs(matrix[(loc_n - 1) * n + loc_n - 2]);
 		while (check_param > stop_param) {
-			std::cout << std::endl << check_param << std::endl;
-			std::cout << std::endl;
-			print_matrix(6, 6, n, matrix);
+			//std::cout << std::endl << check_param << std::endl;
+			//std::cout << std::endl;
+			//print_matrix(6, 6, n, matrix);
 			s_k = matrix[(loc_n - 1) * n + loc_n - 1];
 			for (i = 0; i < loc_n; i++) matrix[i * n + i] -= s_k;
 			QR_reflection(n, matrix, loc_n, x1, x2);
-			std::cout << "qr" << std::endl;
-			print_matrix(6, 6, n, matrix);
-			std::cout << std::endl;
+			//std::cout << "qr" << std::endl;
+			//print_matrix(6, 6, n, matrix);
+			//std::cout << std::endl;
 			QR2RQ(n, matrix, loc_n, x1, x2);
-			std::cout << "RQ" << std::endl;
-			print_matrix(6, 6, n, matrix);
-			std::cout << std::endl;
+			//std::cout << "RQ" << std::endl;
+			//print_matrix(6, 6, n, matrix);
+			//std::cout << std::endl;
 			for (i = 0; i < loc_n; i++) matrix[i * n + i] += s_k;
 			check_param = fabs(matrix[(loc_n - 1) * n + loc_n - 2]);
 		}
